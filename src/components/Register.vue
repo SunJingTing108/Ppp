@@ -39,9 +39,14 @@ export default {
         //   alert(response.data.state + '\n'
         //   +response.data.message)
         // })
+      this.fullscreenLoading=true;
+      that=this
+
         Axios.post(url + '/register',{
           params:this.newUser
-        }).then(function (response){
+        }).then( function(response){
+          alert(123)
+          that.fullscreenLoading=false
           alert(response.data.state + '\n' + response.data.message)
         })
       }
